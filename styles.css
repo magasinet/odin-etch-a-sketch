@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 800px;
+   margin-left: auto;
+   margin-right: auto;
+   
+ 
+  
+
+}
+
+.boxes {
+    border: 1px solid black;
+    width: calc(100% * (1/17));
+
+    /* height and width same length */
+    aspect-ratio: 1 / 1;
+    
+    
+}
+
+.boxes:hover {
+    background-color: aqua;
+}
+
+
+/* .brr {
+    margin-bottom: -2px;
+    line-height: 0;
+} */
+
+
+/* For some reason i have to change the width(flex-items) on small screen */
+
+@media (max-width: 540px) {
+    
+    .boxes {
+        width: calc(100% * (1/18));
+    }
+}
