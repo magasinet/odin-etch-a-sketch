@@ -8,7 +8,7 @@
 .container {
    display: flex;
    flex-wrap: wrap;
-   max-width: 800px;
+   max-width: 900px;
    margin-left: auto;
    margin-right: auto;
    
@@ -19,7 +19,8 @@
 
 .boxes {
     border: 1px solid black;
-    width: calc(100% * (1/17));
+    /* 16 boxes but number 17? */
+    width: calc(100% * (1/17)); 
 
     /* height and width same length */
     aspect-ratio: 1 / 1;
@@ -30,6 +31,8 @@
 .boxes:hover {
     background-color: aqua;
 }
+
+
 
 
 /* .brr {
