@@ -5,6 +5,7 @@ const container = document.querySelector('.container');
 Mutation Observer
 Change background color on mouseover when element nodelist is changed via DOM.
 Adding this changes the color at initial sketch and when the user changes the sketch.
+https://www.w3docs.com/learn-javascript/mutation-observer.html
 */
 let observer = new MutationObserver(() => {
     // what to do when DOM changes (backgroundColor = red)
@@ -40,8 +41,16 @@ const btn = document.querySelector('button');
 btn.addEventListener('click', getSquares);
 
 function getSquares() {
-    let squares = prompt('How many squares on each side?');
-    newSketch(squares);
+    let squares = parseInt(prompt('How many squares on each side?'));
+    if(isNaN(squares)) {
+        alert('You did not enter a number');
+    } else if (squares<0 || squares > 100) {
+        alert('Enter a number between 0-100');
+    } else {
+       newSketch(squares); 
+    }
+
+    
 }
 
 function newSketch(num) {
@@ -49,7 +58,7 @@ function newSketch(num) {
 
     let totalSquares = num * num;
 
-    let side = parseInt(num) + 1; //the input is a string and to get correct squares on each side plus 1(?)
+    let side = num + 1; //to get correct squares on each side plus 1(?)
 
 
     for (let i = 0; i < totalSquares; i++) {
@@ -63,4 +72,3 @@ function newSketch(num) {
 
 }
 
-/* ADD MAXIMUM OF 100 in user input */
